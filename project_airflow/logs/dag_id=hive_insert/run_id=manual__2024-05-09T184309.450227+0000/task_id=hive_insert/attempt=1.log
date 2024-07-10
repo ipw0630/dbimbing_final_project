@@ -1,0 +1,70 @@
+[2024-05-09T18:43:14.571+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-09T18:43:14.610+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hive_insert.hive_insert manual__2024-05-09T18:43:09.450227+00:00 [queued]>
+[2024-05-09T18:43:14.623+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hive_insert.hive_insert manual__2024-05-09T18:43:09.450227+00:00 [queued]>
+[2024-05-09T18:43:14.625+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-09T18:43:14.650+0000] {taskinstance.py:2330} INFO - Executing <Task(HiveOperator): hive_insert> on 2024-05-09 18:43:09.450227+00:00
+[2024-05-09T18:43:14.659+0000] {standard_task_runner.py:63} INFO - Started process 1505 to run task
+[2024-05-09T18:43:14.665+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'hive_insert', 'hive_insert', 'manual__2024-05-09T18:43:09.450227+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/hive_insert.py', '--cfg-path', '/tmp/tmp7dr17suo']
+[2024-05-09T18:43:14.669+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask hive_insert
+[2024-05-09T18:43:14.746+0000] {task_command.py:426} INFO - Running <TaskInstance: hive_insert.hive_insert manual__2024-05-09T18:43:09.450227+00:00 [running]> on host a602b01b49ab
+[2024-05-09T18:43:14.925+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hive_insert' AIRFLOW_CTX_TASK_ID='hive_insert' AIRFLOW_CTX_EXECUTION_DATE='2024-05-09T18:43:09.450227+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-09T18:43:09.450227+00:00'
+[2024-05-09T18:43:14.928+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-09T18:43:14.929+0000] {hive.py:138} INFO - Executing: 
+            INSERT INTO dibimbing.karyawan (id, nama) VALUES
+            (3, 'lies'),
+            (4, 'surya'),
+            (5, 'priska')
+            INSERT OVERWRITE TABLE dibimbing.karyawan (id, nama)
+            SELECT DISTINCT * FROM dibimbing.karyawan
+        
+[2024-05-09T18:43:14.944+0000] {connection.py:274} WARNING - Connection schemes (type: hive_cli) shall not contain '_' according to RFC3986.
+[2024-05-09T18:43:14.949+0000] {base.py:84} INFO - Using connection ID 'hive_cli_default' for task execution.
+[2024-05-09T18:43:14.950+0000] {hive.py:157} INFO - Passing HiveConf: {'airflow.ctx.dag_owner': '***', 'airflow.ctx.dag_id': 'hive_insert', 'airflow.ctx.task_id': 'hive_insert', 'airflow.ctx.execution_date': '2024-05-09T18:43:09.450227+00:00', 'airflow.ctx.try_number': '1', 'airflow.ctx.dag_run_id': 'manual__2024-05-09T18:43:09.450227+00:00'}
+[2024-05-09T18:43:14.953+0000] {hive.py:166} INFO - High Availability not set, setting JDBC url as jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:43:14.954+0000] {hive.py:309} INFO - beeline -u "jdbc:hive2://host.docker.internal:10000/" -hiveconf ***.ctx.dag_id=hive_insert -hiveconf ***.ctx.task_id=hive_insert -hiveconf ***.ctx.execution_date=2024-05-09T18:43:09.450227+00:00 -hiveconf ***.ctx.try_number=1 -hiveconf ***.ctx.dag_run_id=manual__2024-05-09T18:43:09.450227+00:00 -hiveconf ***.ctx.dag_owner=*** -hiveconf ***.ctx.dag_email= -hiveconf mapred.job.name=Airflow HiveOperator task for a602b01b49ab.hive_insert.hive_insert.2024-05-09T18:43:09.450227+00:00 -f /tmp/***_hiveop_evo22w9u/tmpyomc4n5_
+[2024-05-09T18:43:15.116+0000] {hive.py:319} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-09T18:43:18.232+0000] {hive.py:319} INFO - Connecting to jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:43:18.967+0000] {hive.py:319} INFO - Connected to: Apache Hive (version 2.3.2)
+[2024-05-09T18:43:18.968+0000] {hive.py:319} INFO - Driver: Hive JDBC (version 2.3.9)
+[2024-05-09T18:43:18.969+0000] {hive.py:319} INFO - Transaction isolation: TRANSACTION_REPEATABLE_READ
+[2024-05-09T18:43:19.129+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.139 seconds)
+[2024-05-09T18:43:19.190+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 5:0 missing EOF at 'INSERT' near ')' (state=42000,code=40000)
+[2024-05-09T18:43:19.203+0000] {hive.py:319} INFO - Closing: 0: jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:43:19.282+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-09T18:43:19.299+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/hive/operators/hive.py", line 158, in execute
+    self.hook.run_cli(hql=self.hql, schema=self.schema, hive_conf=self.hiveconfs)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/hive/hooks/hive.py", line 323, in run_cli
+    raise AirflowException(stdout)
+airflow.exceptions.AirflowException: /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+Connecting to jdbc:hive2://host.docker.internal:10000/
+Connected to: Apache Hive (version 2.3.2)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.139 seconds)
+0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 5:0 missing EOF at 'INSERT' near ')' (state=42000,code=40000)
+Closing: 0: jdbc:hive2://host.docker.internal:10000/
+
+[2024-05-09T18:43:19.310+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=hive_insert, task_id=hive_insert, run_id=manual__2024-05-09T18:43:09.450227+00:00, execution_date=20240509T184309, start_date=20240509T184314, end_date=20240509T184319
+[2024-05-09T18:43:19.334+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 19 for task hive_insert (/home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+Connecting to jdbc:hive2://host.docker.internal:10000/
+Connected to: Apache Hive (version 2.3.2)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.139 seconds)
+0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 5:0 missing EOF at 'INSERT' near ')' (state=42000,code=40000)
+Closing: 0: jdbc:hive2://host.docker.internal:10000/
+; 1505)
+[2024-05-09T18:43:19.361+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-09T18:43:19.406+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-09T18:43:19.415+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

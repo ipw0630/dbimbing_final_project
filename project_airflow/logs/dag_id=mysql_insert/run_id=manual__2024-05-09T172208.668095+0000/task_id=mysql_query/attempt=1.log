@@ -1,0 +1,34 @@
+[2024-05-09T17:22:16.962+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-09T17:22:17.013+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_insert.mysql_query manual__2024-05-09T17:22:08.668095+00:00 [queued]>
+[2024-05-09T17:22:17.033+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_insert.mysql_query manual__2024-05-09T17:22:08.668095+00:00 [queued]>
+[2024-05-09T17:22:17.035+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-09T17:22:17.082+0000] {taskinstance.py:2330} INFO - Executing <Task(MySqlOperator): mysql_query> on 2024-05-09 17:22:08.668095+00:00
+[2024-05-09T17:22:17.094+0000] {standard_task_runner.py:63} INFO - Started process 463 to run task
+[2024-05-09T17:22:17.102+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'mysql_insert', 'mysql_query', 'manual__2024-05-09T17:22:08.668095+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/mysql_insert.py', '--cfg-path', '/tmp/tmpwsyw0d17']
+[2024-05-09T17:22:17.109+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask mysql_query
+[2024-05-09T17:22:17.231+0000] {task_command.py:426} INFO - Running <TaskInstance: mysql_insert.mysql_query manual__2024-05-09T17:22:08.668095+00:00 [running]> on host a602b01b49ab
+[2024-05-09T17:22:17.562+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_insert' AIRFLOW_CTX_TASK_ID='mysql_query' AIRFLOW_CTX_EXECUTION_DATE='2024-05-09T17:22:08.668095+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-09T17:22:08.668095+00:00'
+[2024-05-09T17:22:17.568+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-09T17:22:17.569+0000] {sql.py:276} INFO - Executing: 
+            INSERT INTO dibimbing.karyawan (nama) VALUES
+            ('lies'),
+            ('surya'),
+            ('priska')
+        
+[2024-05-09T17:22:17.590+0000] {base.py:84} INFO - Using connection ID 'mysql_default' for task execution.
+[2024-05-09T17:22:17.617+0000] {base.py:84} INFO - Using connection ID 'mysql_default' for task execution.
+[2024-05-09T17:22:17.682+0000] {sql.py:470} INFO - Running statement: 
+            INSERT INTO ***.karyawan (nama) VALUES
+            ('lies'),
+            ('surya'),
+            ('priska')
+        , parameters: None
+[2024-05-09T17:22:17.727+0000] {sql.py:479} INFO - Rows affected: 3
+[2024-05-09T17:22:17.775+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-09T17:22:17.826+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=mysql_insert, task_id=mysql_query, run_id=manual__2024-05-09T17:22:08.668095+00:00, execution_date=20240509T172208, start_date=20240509T172217, end_date=20240509T172217
+[2024-05-09T17:22:17.931+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-09T17:22:17.984+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.11/site-packages/***/models/baseoperator.py:1296: AirflowProviderDeprecationWarning: Call to deprecated class MySqlOperator. (Please use `***.providers.common.sql.operators.sql.SQLExecuteQueryOperator`.Also, you can provide `hook_params={'schema': <database>}`.)
+  result = cls.__new__(cls)
+
+[2024-05-09T17:22:18.012+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-09T17:22:18.016+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

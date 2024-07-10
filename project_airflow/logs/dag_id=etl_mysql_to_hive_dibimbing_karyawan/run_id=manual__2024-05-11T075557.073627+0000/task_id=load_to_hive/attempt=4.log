@@ -1,0 +1,66 @@
+[2024-05-11T08:22:11.294+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-11T08:22:11.335+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.load_to_hive manual__2024-05-11T07:55:57.073627+00:00 [queued]>
+[2024-05-11T08:22:11.356+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.load_to_hive manual__2024-05-11T07:55:57.073627+00:00 [queued]>
+[2024-05-11T08:22:11.358+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 4
+[2024-05-11T08:22:11.383+0000] {taskinstance.py:2330} INFO - Executing <Task(HiveOperator): load_to_hive> on 2024-05-11 07:55:57.073627+00:00
+[2024-05-11T08:22:11.393+0000] {standard_task_runner.py:63} INFO - Started process 1387 to run task
+[2024-05-11T08:22:11.399+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_mysql_to_hive_dibimbing_karyawan', 'load_to_hive', 'manual__2024-05-11T07:55:57.073627+00:00', '--job-id', '360', '--raw', '--subdir', 'DAGS_FOLDER/etl_mysql_to_hive_dibimbing_karyawan.py', '--cfg-path', '/tmp/tmp01m9tsey']
+[2024-05-11T08:22:11.405+0000] {standard_task_runner.py:91} INFO - Job 360: Subtask load_to_hive
+[2024-05-11T08:22:11.491+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.load_to_hive manual__2024-05-11T07:55:57.073627+00:00 [running]> on host 94409fb18ddd
+[2024-05-11T08:22:11.700+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_mysql_to_hive_dibimbing_karyawan' AIRFLOW_CTX_TASK_ID='load_to_hive' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T07:55:57.073627+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-11T07:55:57.073627+00:00'
+[2024-05-11T08:22:11.706+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-11T08:22:11.707+0000] {hive.py:138} INFO - Executing: 
+            INSERT OVERWRITE TABLE dibimbing.karyawan
+            SELECT id, nama FROM [[101, 'LIES'], [102, 'SURYA'], [103, 'PRISKA'], [104, 'INDAH'], [105, 'PERMATA'], [106, 'WULANDARI'], [107, 'AGUS'], [108, 'BUDI'], [109, 'AGUNG'], [110, 'BEJO']]
+        
+[2024-05-11T08:22:11.720+0000] {connection.py:274} WARNING - Connection schemes (type: hive_cli) shall not contain '_' according to RFC3986.
+[2024-05-11T08:22:11.724+0000] {base.py:84} INFO - Using connection ID 'hive_cli_default' for task execution.
+[2024-05-11T08:22:11.725+0000] {hive.py:157} INFO - Passing HiveConf: {'airflow.ctx.dag_owner': '***', 'airflow.ctx.dag_id': 'etl_mysql_to_hive_dibimbing_karyawan', 'airflow.ctx.task_id': 'load_to_hive', 'airflow.ctx.execution_date': '2024-05-11T07:55:57.073627+00:00', 'airflow.ctx.try_number': '4', 'airflow.ctx.dag_run_id': 'manual__2024-05-11T07:55:57.073627+00:00'}
+[2024-05-11T08:22:11.728+0000] {hive.py:166} INFO - High Availability not set, setting JDBC url as jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T08:22:11.729+0000] {hive.py:309} INFO - beeline -u "jdbc:hive2://host.docker.internal:10000/" -hiveconf ***.ctx.dag_id=etl_mysql_to_hive_dibimbing_karyawan -hiveconf ***.ctx.task_id=load_to_hive -hiveconf ***.ctx.execution_date=2024-05-11T07:55:57.073627+00:00 -hiveconf ***.ctx.try_number=4 -hiveconf ***.ctx.dag_run_id=manual__2024-05-11T07:55:57.073627+00:00 -hiveconf ***.ctx.dag_owner=*** -hiveconf ***.ctx.dag_email= -hiveconf mapred.job.name=Airflow HiveOperator task for 94409fb18ddd.etl_mysql_to_hive_dibimbing_karyawan.load_to_hive.2024-05-11T07:55:57.073627+00:00 -f /tmp/***_hiveop_uex5ynwr/tmpzk0hisvr
+[2024-05-11T08:22:11.872+0000] {hive.py:319} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-11T08:22:14.746+0000] {hive.py:319} INFO - Connecting to jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T08:22:15.497+0000] {hive.py:319} INFO - Connected to: Apache Hive (version 2.3.2)
+[2024-05-11T08:22:15.498+0000] {hive.py:319} INFO - Driver: Hive JDBC (version 2.3.9)
+[2024-05-11T08:22:15.500+0000] {hive.py:319} INFO - Transaction isolation: TRANSACTION_REPEATABLE_READ
+[2024-05-11T08:22:15.661+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.141 seconds)
+[2024-05-11T08:22:15.722+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 2:21 cannot recognize input near '[' '[' '101' in join source (state=42000,code=40000)
+[2024-05-11T08:22:15.746+0000] {hive.py:319} INFO - Closing: 0: jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T08:22:15.830+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-11T08:22:15.853+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/hive/operators/hive.py", line 158, in execute
+    self.hook.run_cli(hql=self.hql, schema=self.schema, hive_conf=self.hiveconfs)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/apache/hive/hooks/hive.py", line 323, in run_cli
+    raise AirflowException(stdout)
+airflow.exceptions.AirflowException: /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+Connecting to jdbc:hive2://host.docker.internal:10000/
+Connected to: Apache Hive (version 2.3.2)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.141 seconds)
+0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 2:21 cannot recognize input near '[' '[' '101' in join source (state=42000,code=40000)
+Closing: 0: jdbc:hive2://host.docker.internal:10000/
+
+[2024-05-11T08:22:15.864+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl_mysql_to_hive_dibimbing_karyawan, task_id=load_to_hive, run_id=manual__2024-05-11T07:55:57.073627+00:00, execution_date=20240511T075557, start_date=20240511T082211, end_date=20240511T082215
+[2024-05-11T08:22:15.891+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 360 for task load_to_hive (/home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+Connecting to jdbc:hive2://host.docker.internal:10000/
+Connected to: Apache Hive (version 2.3.2)
+Driver: Hive JDBC (version 2.3.9)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.141 seconds)
+0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> Error: Error while compiling statement: FAILED: ParseException line 2:21 cannot recognize input near '[' '[' '101' in join source (state=42000,code=40000)
+Closing: 0: jdbc:hive2://host.docker.internal:10000/
+; 1387)
+[2024-05-11T08:22:15.946+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-05-11T08:22:15.996+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-11T08:22:16.005+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

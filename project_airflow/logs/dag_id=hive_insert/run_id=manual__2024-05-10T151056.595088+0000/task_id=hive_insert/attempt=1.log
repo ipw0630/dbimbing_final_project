@@ -1,0 +1,36 @@
+[2024-05-10T15:11:01.239+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-10T15:11:01.311+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hive_insert.hive_insert manual__2024-05-10T15:10:56.595088+00:00 [queued]>
+[2024-05-10T15:11:01.336+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hive_insert.hive_insert manual__2024-05-10T15:10:56.595088+00:00 [queued]>
+[2024-05-10T15:11:01.337+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-10T15:11:01.384+0000] {taskinstance.py:2330} INFO - Executing <Task(HiveOperator): hive_insert> on 2024-05-10 15:10:56.595088+00:00
+[2024-05-10T15:11:01.396+0000] {standard_task_runner.py:63} INFO - Started process 1519 to run task
+[2024-05-10T15:11:01.410+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'hive_insert', 'hive_insert', 'manual__2024-05-10T15:10:56.595088+00:00', '--job-id', '108', '--raw', '--subdir', 'DAGS_FOLDER/hive_insert.py', '--cfg-path', '/tmp/tmp9y8_6z9o']
+[2024-05-10T15:11:01.431+0000] {standard_task_runner.py:91} INFO - Job 108: Subtask hive_insert
+[2024-05-10T15:11:01.583+0000] {task_command.py:426} INFO - Running <TaskInstance: hive_insert.hive_insert manual__2024-05-10T15:10:56.595088+00:00 [running]> on host feac594d54b9
+[2024-05-10T15:11:01.864+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hive_insert' AIRFLOW_CTX_TASK_ID='hive_insert' AIRFLOW_CTX_EXECUTION_DATE='2024-05-10T15:10:56.595088+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-10T15:10:56.595088+00:00'
+[2024-05-10T15:11:01.868+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-10T15:11:01.869+0000] {hive.py:138} INFO - Executing: 
+            INSERT INTO dibimbing.karyawan (id, nama) VALUES
+            (3, 'lies'),
+            (4, 'surya'),
+            (5, 'priska')
+        
+[2024-05-10T15:11:01.897+0000] {connection.py:274} WARNING - Connection schemes (type: hive_cli) shall not contain '_' according to RFC3986.
+[2024-05-10T15:11:01.903+0000] {base.py:84} INFO - Using connection ID 'hive_cli_default' for task execution.
+[2024-05-10T15:11:01.905+0000] {hive.py:157} INFO - Passing HiveConf: {'airflow.ctx.dag_owner': '***', 'airflow.ctx.dag_id': 'hive_insert', 'airflow.ctx.task_id': 'hive_insert', 'airflow.ctx.execution_date': '2024-05-10T15:10:56.595088+00:00', 'airflow.ctx.try_number': '1', 'airflow.ctx.dag_run_id': 'manual__2024-05-10T15:10:56.595088+00:00'}
+[2024-05-10T15:11:01.912+0000] {hive.py:166} INFO - High Availability not set, setting JDBC url as jdbc:hive2://host.docker.internal:10000/
+[2024-05-10T15:11:01.913+0000] {hive.py:309} INFO - beeline -u "jdbc:hive2://host.docker.internal:10000/" -hiveconf ***.ctx.dag_id=hive_insert -hiveconf ***.ctx.task_id=hive_insert -hiveconf ***.ctx.execution_date=2024-05-10T15:10:56.595088+00:00 -hiveconf ***.ctx.try_number=1 -hiveconf ***.ctx.dag_run_id=manual__2024-05-10T15:10:56.595088+00:00 -hiveconf ***.ctx.dag_owner=*** -hiveconf ***.ctx.dag_email= -hiveconf mapred.job.name=Airflow HiveOperator task for feac594d54b9.hive_insert.hive_insert.2024-05-10T15:10:56.595088+00:00 -f /tmp/***_hiveop_oqgp2n34/tmphj6_bipf
+[2024-05-10T15:11:02.148+0000] {hive.py:319} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-10T15:11:06.933+0000] {hive.py:319} INFO - Connecting to jdbc:hive2://host.docker.internal:10000/
+[2024-05-10T15:11:08.846+0000] {hive.py:319} INFO - Connected to: Apache Hive (version 2.3.2)
+[2024-05-10T15:11:08.848+0000] {hive.py:319} INFO - Driver: Hive JDBC (version 2.3.9)
+[2024-05-10T15:11:08.850+0000] {hive.py:319} INFO - Transaction isolation: TRANSACTION_REPEATABLE_READ
+[2024-05-10T15:11:09.094+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.217 seconds)
+[2024-05-10T15:11:13.568+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+[2024-05-10T15:11:23.521+0000] {hive.py:319} INFO - No rows affected (14.376 seconds)
+[2024-05-10T15:11:23.548+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> Closing: 0: jdbc:hive2://host.docker.internal:10000/
+[2024-05-10T15:11:23.616+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-10T15:11:23.641+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=hive_insert, task_id=hive_insert, run_id=manual__2024-05-10T15:10:56.595088+00:00, execution_date=20240510T151056, start_date=20240510T151101, end_date=20240510T151123
+[2024-05-10T15:11:23.696+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-10T15:11:23.745+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-10T15:11:23.748+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

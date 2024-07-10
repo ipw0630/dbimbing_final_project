@@ -1,0 +1,157 @@
+[2024-05-11T17:28:01.558+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-11T17:28:01.602+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_mysql_to_hive_all.dibimbing__karyawan.load_to_hive manual__2024-05-11T17:24:46.425512+00:00 [queued]>
+[2024-05-11T17:28:01.621+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_mysql_to_hive_all.dibimbing__karyawan.load_to_hive manual__2024-05-11T17:24:46.425512+00:00 [queued]>
+[2024-05-11T17:28:01.623+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-05-11T17:28:01.673+0000] {taskinstance.py:2330} INFO - Executing <Task(HiveOperator): dibimbing__karyawan.load_to_hive> on 2024-05-11 17:24:46.425512+00:00
+[2024-05-11T17:28:01.684+0000] {standard_task_runner.py:63} INFO - Started process 8889 to run task
+[2024-05-11T17:28:01.692+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_mysql_to_hive_all', 'dibimbing__karyawan.load_to_hive', 'manual__2024-05-11T17:24:46.425512+00:00', '--job-id', '828', '--raw', '--subdir', 'DAGS_FOLDER/etl_mysql_to_hive_all.py', '--cfg-path', '/tmp/tmpo689n5y8']
+[2024-05-11T17:28:01.699+0000] {standard_task_runner.py:91} INFO - Job 828: Subtask dibimbing__karyawan.load_to_hive
+[2024-05-11T17:28:01.809+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_mysql_to_hive_all.dibimbing__karyawan.load_to_hive manual__2024-05-11T17:24:46.425512+00:00 [running]> on host 94409fb18ddd
+[2024-05-11T17:28:02.074+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_mysql_to_hive_all' AIRFLOW_CTX_TASK_ID='dibimbing__karyawan.load_to_hive' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T17:24:46.425512+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-11T17:24:46.425512+00:00'
+[2024-05-11T17:28:02.078+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-11T17:28:02.079+0000] {hive.py:138} INFO - Executing: 
+                    TRUNCATE TABLE dibimbing.karyawan;
+               
+                    INSERT INTO dibimbing.karyawan
+                    (
+                        
+                            id , 
+                        
+                            nama 
+                        
+                    )
+                    VALUES
+                    
+                        (
+                            
+                                1 , 
+                            
+                                'lies' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                2 , 
+                            
+                                'surya' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                3 , 
+                            
+                                'priska' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                4 , 
+                            
+                                'indah' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                5 , 
+                            
+                                'permata' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                6 , 
+                            
+                                'wulandari' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                7 , 
+                            
+                                'agus' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                8 , 
+                            
+                                'budi' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                9 , 
+                            
+                                'agung' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                10 , 
+                            
+                                'bejo' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                11 , 
+                            
+                                'BUDI' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                12 , 
+                            
+                                'BEJO' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                13 , 
+                            
+                                'Agus' 
+                            
+                        ) , 
+                    
+                        (
+                            
+                                14 , 
+                            
+                                'SETYO' 
+                            
+                        ) 
+                    
+                
+[2024-05-11T17:28:02.094+0000] {connection.py:274} WARNING - Connection schemes (type: hive_cli) shall not contain '_' according to RFC3986.
+[2024-05-11T17:28:02.097+0000] {base.py:84} INFO - Using connection ID 'hive_cli_default' for task execution.
+[2024-05-11T17:28:02.099+0000] {hive.py:157} INFO - Passing HiveConf: {'airflow.ctx.dag_owner': '***', 'airflow.ctx.dag_id': 'etl_mysql_to_hive_all', 'airflow.ctx.task_id': 'dibimbing__karyawan.load_to_hive', 'airflow.ctx.execution_date': '2024-05-11T17:24:46.425512+00:00', 'airflow.ctx.try_number': '2', 'airflow.ctx.dag_run_id': 'manual__2024-05-11T17:24:46.425512+00:00'}
+[2024-05-11T17:28:02.103+0000] {hive.py:166} INFO - High Availability not set, setting JDBC url as jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T17:28:02.104+0000] {hive.py:309} INFO - beeline -u "jdbc:hive2://host.docker.internal:10000/" -hiveconf ***.ctx.dag_id=etl_mysql_to_hive_all -hiveconf ***.ctx.task_id=dibimbing__karyawan.load_to_hive -hiveconf ***.ctx.execution_date=2024-05-11T17:24:46.425512+00:00 -hiveconf ***.ctx.try_number=2 -hiveconf ***.ctx.dag_run_id=manual__2024-05-11T17:24:46.425512+00:00 -hiveconf ***.ctx.dag_owner=*** -hiveconf ***.ctx.dag_email= -hiveconf mapred.job.name=Airflow HiveOperator task for 94409fb18ddd.etl_mysql_to_hive_all.dibimbing__karyawan.load_to_hive.2024-05-11T17:24:46.425512+00:00 -f /tmp/***_hiveop_3q2oxypj/tmpszeut4hj
+[2024-05-11T17:28:02.294+0000] {hive.py:319} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-11T17:28:05.741+0000] {hive.py:319} INFO - Connecting to jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T17:28:06.505+0000] {hive.py:319} INFO - Connected to: Apache Hive (version 2.3.2)
+[2024-05-11T17:28:06.508+0000] {hive.py:319} INFO - Driver: Hive JDBC (version 2.3.9)
+[2024-05-11T17:28:06.509+0000] {hive.py:319} INFO - Transaction isolation: TRANSACTION_REPEATABLE_READ
+[2024-05-11T17:28:06.686+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.149 seconds)
+[2024-05-11T17:28:06.901+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.191 seconds)
+[2024-05-11T17:28:09.157+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+[2024-05-11T17:28:10.232+0000] {hive.py:319} INFO - No rows affected (3.23 seconds)
+[2024-05-11T17:28:10.274+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> Closing: 0: jdbc:hive2://host.docker.internal:10000/
+[2024-05-11T17:28:10.367+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-11T17:28:10.394+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_mysql_to_hive_all, task_id=dibimbing__karyawan.load_to_hive, run_id=manual__2024-05-11T17:24:46.425512+00:00, execution_date=20240511T172446, start_date=20240511T172801, end_date=20240511T172810
+[2024-05-11T17:28:10.479+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-11T17:28:10.514+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-11T17:28:10.517+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

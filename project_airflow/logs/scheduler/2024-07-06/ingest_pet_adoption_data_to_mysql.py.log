@@ -1,0 +1,8 @@
+[2024-07-06T13:39:00.151+0000] {processor.py:161} INFO - Started process (PID=75) to work on /opt/airflow/dags/ingest_pet_adoption_data_to_mysql.py
+[2024-07-06T13:39:00.153+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ingest_pet_adoption_data_to_mysql.py for tasks to queue
+[2024-07-06T13:39:00.156+0000] {logging_mixin.py:188} INFO - [2024-07-06T13:39:00.155+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ingest_pet_adoption_data_to_mysql.py
+[2024-07-06T13:39:00.157+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ingest_pet_adoption_data_to_mysql.py
+[2024-07-06T13:39:00.226+0000] {logging_mixin.py:188} INFO - [2024-07-06T13:39:00.226+0000] {taskinstance.py:2907} ERROR - {'DAG Id': 'ingest_pet_adoption_data_to_mysql', 'Task Id': 'ingest_csv_to_mysql', 'Run Id': 'scheduled__2023-01-28T00:00:00+00:00', 'Hostname': '72210ec1b5c5', 'External Executor Id': '5fbca4a2-89f1-4eb5-b4e8-cf96a011075a'}
+[2024-07-06T13:39:00.260+0000] {logging_mixin.py:188} INFO - [2024-07-06T13:39:00.259+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ingest_pet_adoption_data_to_mysql, task_id=ingest_csv_to_mysql, run_id=scheduled__2023-01-28T00:00:00+00:00, execution_date=20230128T000000, start_date=20240702T173206, end_date=20240706T133900
+[2024-07-06T13:39:00.281+0000] {processor.py:791} INFO - Executed failure callback for <TaskInstance: ingest_pet_adoption_data_to_mysql.ingest_csv_to_mysql scheduled__2023-01-28T00:00:00+00:00 [up_for_retry]> in state up_for_retry
+[2024-07-06T13:39:00.283+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ingest_pet_adoption_data_to_mysql.py took 0.141 seconds

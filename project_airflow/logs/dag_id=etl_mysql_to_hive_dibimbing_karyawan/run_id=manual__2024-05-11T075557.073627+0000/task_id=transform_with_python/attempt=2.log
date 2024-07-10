@@ -1,0 +1,18 @@
+[2024-05-11T08:10:16.300+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-11T08:10:16.350+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.transform_with_python manual__2024-05-11T07:55:57.073627+00:00 [queued]>
+[2024-05-11T08:10:16.368+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.transform_with_python manual__2024-05-11T07:55:57.073627+00:00 [queued]>
+[2024-05-11T08:10:16.369+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2024-05-11T08:10:16.401+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): transform_with_python> on 2024-05-11 07:55:57.073627+00:00
+[2024-05-11T08:10:16.412+0000] {standard_task_runner.py:63} INFO - Started process 1085 to run task
+[2024-05-11T08:10:16.418+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_mysql_to_hive_dibimbing_karyawan', 'transform_with_python', 'manual__2024-05-11T07:55:57.073627+00:00', '--job-id', '345', '--raw', '--subdir', 'DAGS_FOLDER/etl_mysql_to_hive_dibimbing_karyawan.py', '--cfg-path', '/tmp/tmpyrqmz75z']
+[2024-05-11T08:10:16.425+0000] {standard_task_runner.py:91} INFO - Job 345: Subtask transform_with_python
+[2024-05-11T08:10:16.541+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_mysql_to_hive_dibimbing_karyawan.transform_with_python manual__2024-05-11T07:55:57.073627+00:00 [running]> on host 94409fb18ddd
+[2024-05-11T08:10:16.794+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_mysql_to_hive_dibimbing_karyawan' AIRFLOW_CTX_TASK_ID='transform_with_python' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T07:55:57.073627+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-11T07:55:57.073627+00:00'
+[2024-05-11T08:10:16.799+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-11T08:10:16.825+0000] {logging_mixin.py:188} INFO - [[101, 'LIES'], [102, 'SURYA'], [103, 'PRISKA'], [104, 'INDAH'], [105, 'PERMATA'], [106, 'WULANDARI'], [107, 'AGUS'], [108, 'BUDI'], [109, 'AGUNG'], [110, 'BEJO']]
+[2024-05-11T08:10:16.826+0000] {python.py:237} INFO - Done. Returned value was: [[101, 'LIES'], [102, 'SURYA'], [103, 'PRISKA'], [104, 'INDAH'], [105, 'PERMATA'], [106, 'WULANDARI'], [107, 'AGUS'], [108, 'BUDI'], [109, 'AGUNG'], [110, 'BEJO']]
+[2024-05-11T08:10:16.827+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-11T08:10:16.875+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl_mysql_to_hive_dibimbing_karyawan, task_id=transform_with_python, run_id=manual__2024-05-11T07:55:57.073627+00:00, execution_date=20240511T075557, start_date=20240511T081016, end_date=20240511T081016
+[2024-05-11T08:10:16.914+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-11T08:10:16.976+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-05-11T08:10:16.980+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,55 @@
+[2024-05-09T18:28:03.791+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-09T18:28:03.847+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hive_query.hive_query manual__2024-05-09T18:27:52.218233+00:00 [queued]>
+[2024-05-09T18:28:03.867+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hive_query.hive_query manual__2024-05-09T18:27:52.218233+00:00 [queued]>
+[2024-05-09T18:28:03.869+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-09T18:28:03.906+0000] {taskinstance.py:2330} INFO - Executing <Task(HiveOperator): hive_query> on 2024-05-09 18:27:52.218233+00:00
+[2024-05-09T18:28:03.917+0000] {standard_task_runner.py:63} INFO - Started process 1201 to run task
+[2024-05-09T18:28:03.923+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'hive_query', 'hive_query', 'manual__2024-05-09T18:27:52.218233+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/hive_query.py', '--cfg-path', '/tmp/tmpxujcfu32']
+[2024-05-09T18:28:03.958+0000] {standard_task_runner.py:91} INFO - Job 17: Subtask hive_query
+[2024-05-09T18:28:04.085+0000] {task_command.py:426} INFO - Running <TaskInstance: hive_query.hive_query manual__2024-05-09T18:27:52.218233+00:00 [running]> on host a602b01b49ab
+[2024-05-09T18:28:04.329+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hive_query' AIRFLOW_CTX_TASK_ID='hive_query' AIRFLOW_CTX_EXECUTION_DATE='2024-05-09T18:27:52.218233+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-09T18:27:52.218233+00:00'
+[2024-05-09T18:28:04.334+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-09T18:28:04.336+0000] {hive.py:138} INFO - Executing: SELECT * FROM dibimbing.karyawan
+[2024-05-09T18:28:04.360+0000] {connection.py:274} WARNING - Connection schemes (type: hive_cli) shall not contain '_' according to RFC3986.
+[2024-05-09T18:28:04.368+0000] {base.py:84} INFO - Using connection ID 'hive_cli_default' for task execution.
+[2024-05-09T18:28:04.370+0000] {hive.py:157} INFO - Passing HiveConf: {'airflow.ctx.dag_owner': '***', 'airflow.ctx.dag_id': 'hive_query', 'airflow.ctx.task_id': 'hive_query', 'airflow.ctx.execution_date': '2024-05-09T18:27:52.218233+00:00', 'airflow.ctx.try_number': '1', 'airflow.ctx.dag_run_id': 'manual__2024-05-09T18:27:52.218233+00:00'}
+[2024-05-09T18:28:04.373+0000] {hive.py:166} INFO - High Availability not set, setting JDBC url as jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:28:04.375+0000] {hive.py:309} INFO - beeline -u "jdbc:hive2://host.docker.internal:10000/" -hiveconf ***.ctx.dag_id=hive_query -hiveconf ***.ctx.task_id=hive_query -hiveconf ***.ctx.execution_date=2024-05-09T18:27:52.218233+00:00 -hiveconf ***.ctx.try_number=1 -hiveconf ***.ctx.dag_run_id=manual__2024-05-09T18:27:52.218233+00:00 -hiveconf ***.ctx.dag_owner=*** -hiveconf ***.ctx.dag_email= -hiveconf mapred.job.name=Airflow HiveOperator task for a602b01b49ab.hive_query.hive_query.2024-05-09T18:27:52.218233+00:00 -f /tmp/***_hiveop_86x_0c37/tmp7lae1c2f
+[2024-05-09T18:28:04.657+0000] {hive.py:319} INFO - /home/***/.local/lib/python3.11/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-05-09T18:28:09.706+0000] {hive.py:319} INFO - Connecting to jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:28:10.668+0000] {hive.py:319} INFO - Connected to: Apache Hive (version 2.3.2)
+[2024-05-09T18:28:10.669+0000] {hive.py:319} INFO - Driver: Hive JDBC (version 2.3.9)
+[2024-05-09T18:28:10.670+0000] {hive.py:319} INFO - Transaction isolation: TRANSACTION_REPEATABLE_READ
+[2024-05-09T18:28:10.807+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> No rows affected (0.119 seconds)
+[2024-05-09T18:28:12.604+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> . . . . . . . . . . . . . . . . . . . . . .> . . . . . . . . . . . . . . . . . . . . . .> +--------------+----------------+
+[2024-05-09T18:28:12.612+0000] {hive.py:319} INFO - | karyawan.id  | karyawan.nama  |
+[2024-05-09T18:28:12.614+0000] {hive.py:319} INFO - +--------------+----------------+
+[2024-05-09T18:28:12.617+0000] {hive.py:319} INFO - | 1            | radjah         |
+[2024-05-09T18:28:12.622+0000] {hive.py:319} INFO - | 2            | berlian        |
+[2024-05-09T18:28:12.623+0000] {hive.py:319} INFO - | 4            | budi           |
+[2024-05-09T18:28:12.626+0000] {hive.py:319} INFO - | 3            | saputra        |
+[2024-05-09T18:28:12.627+0000] {hive.py:319} INFO - | 6            | wulandari      |
+[2024-05-09T18:28:12.629+0000] {hive.py:319} INFO - | 5            | yanto          |
+[2024-05-09T18:28:12.630+0000] {hive.py:319} INFO - | 4            | budi           |
+[2024-05-09T18:28:12.631+0000] {hive.py:319} INFO - | 7            | margiyanto     |
+[2024-05-09T18:28:12.633+0000] {hive.py:319} INFO - | 6            | wulandari      |
+[2024-05-09T18:28:12.634+0000] {hive.py:319} INFO - | 5            | yanto          |
+[2024-05-09T18:28:12.636+0000] {hive.py:319} INFO - | 7            | margiyanto     |
+[2024-05-09T18:28:12.640+0000] {hive.py:319} INFO - | 6            | wulandari      |
+[2024-05-09T18:28:12.641+0000] {hive.py:319} INFO - | 1            | radjah         |
+[2024-05-09T18:28:12.643+0000] {hive.py:319} INFO - | 7            | margiyanto     |
+[2024-05-09T18:28:12.644+0000] {hive.py:319} INFO - | 3            | saputra        |
+[2024-05-09T18:28:12.649+0000] {hive.py:319} INFO - | 2            | berlian        |
+[2024-05-09T18:28:12.651+0000] {hive.py:319} INFO - | 1            | radjah         |
+[2024-05-09T18:28:12.653+0000] {hive.py:319} INFO - | 4            | budi           |
+[2024-05-09T18:28:12.657+0000] {hive.py:319} INFO - | 3            | saputra        |
+[2024-05-09T18:28:12.659+0000] {hive.py:319} INFO - | 2            | berlian        |
+[2024-05-09T18:28:12.660+0000] {hive.py:319} INFO - | 5            | yanto          |
+[2024-05-09T18:28:12.661+0000] {hive.py:319} INFO - +--------------+----------------+
+[2024-05-09T18:28:12.662+0000] {hive.py:319} INFO - 21 rows selected (1.789 seconds)
+[2024-05-09T18:28:12.667+0000] {hive.py:319} INFO - 0: jdbc:hive2://host.docker.internal:10000/> Closing: 0: jdbc:hive2://host.docker.internal:10000/
+[2024-05-09T18:28:12.783+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-09T18:28:12.815+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=hive_query, task_id=hive_query, run_id=manual__2024-05-09T18:27:52.218233+00:00, execution_date=20240509T182752, start_date=20240509T182803, end_date=20240509T182812
+[2024-05-09T18:28:12.867+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-09T18:28:12.907+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-09T18:28:12.911+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

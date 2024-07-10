@@ -1,0 +1,29 @@
+[2024-05-11T09:32:03.219+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-05-11T09:32:03.246+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: template_reference.demo_template scheduled__2024-05-11T09:31:00+00:00 [queued]>
+[2024-05-11T09:32:03.256+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: template_reference.demo_template scheduled__2024-05-11T09:31:00+00:00 [queued]>
+[2024-05-11T09:32:03.257+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-05-11T09:32:03.275+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): demo_template> on 2024-05-11 09:31:00+00:00
+[2024-05-11T09:32:03.282+0000] {standard_task_runner.py:63} INFO - Started process 2496 to run task
+[2024-05-11T09:32:03.286+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'template_reference', 'demo_template', 'scheduled__2024-05-11T09:31:00+00:00', '--job-id', '430', '--raw', '--subdir', 'DAGS_FOLDER/template_reference.py', '--cfg-path', '/tmp/tmpsnc7wro0']
+[2024-05-11T09:32:03.290+0000] {standard_task_runner.py:91} INFO - Job 430: Subtask demo_template
+[2024-05-11T09:32:03.352+0000] {task_command.py:426} INFO - Running <TaskInstance: template_reference.demo_template scheduled__2024-05-11T09:31:00+00:00 [running]> on host 94409fb18ddd
+[2024-05-11T09:32:03.499+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='template_reference' AIRFLOW_CTX_TASK_ID='demo_template' AIRFLOW_CTX_EXECUTION_DATE='2024-05-11T09:31:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-05-11T09:31:00+00:00'
+[2024-05-11T09:32:03.501+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-05-11T09:32:03.502+0000] {logging_mixin.py:188} INFO - === logical date ==>
+[2024-05-11T09:32:03.503+0000] {logging_mixin.py:188} INFO - data_interval_start: 2024-05-11 09:31:00+00:00
+[2024-05-11T09:32:03.504+0000] {logging_mixin.py:188} INFO - data_interval_end: 2024-05-11 09:32:00+00:00
+[2024-05-11T09:32:03.504+0000] {logging_mixin.py:188} INFO - === get date and timestamp ==>
+[2024-05-11T09:32:03.505+0000] {logging_mixin.py:188} INFO - ds: 2024-05-11
+[2024-05-11T09:32:03.506+0000] {logging_mixin.py:188} INFO - ts: 2024-05-11T09:31:00+00:00
+[2024-05-11T09:32:03.506+0000] {logging_mixin.py:188} INFO - === realtime ==>
+[2024-05-11T09:32:03.507+0000] {logging_mixin.py:188} INFO - dag_run_start_date: 2024-05-11 09:32:00.341025+00:00
+[2024-05-11T09:32:03.508+0000] {logging_mixin.py:188} INFO - start_task_start_date: 2024-05-11 09:32:00.357194+00:00
+[2024-05-11T09:32:03.508+0000] {logging_mixin.py:188} INFO - === transform ==>
+[2024-05-11T09:32:03.509+0000] {logging_mixin.py:188} INFO - data_interval_end_wib: 2024-05-10 16:32:00
+[2024-05-11T09:32:03.510+0000] {logging_mixin.py:188} INFO - datetime_string: 2023-12-31 00:00:00
+[2024-05-11T09:32:03.511+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-05-11T09:32:03.512+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-05-11T09:32:03.525+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=template_reference, task_id=demo_template, run_id=scheduled__2024-05-11T09:31:00+00:00, execution_date=20240511T093100, start_date=20240511T093203, end_date=20240511T093203
+[2024-05-11T09:32:03.580+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-05-11T09:32:03.603+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-05-11T09:32:03.606+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
