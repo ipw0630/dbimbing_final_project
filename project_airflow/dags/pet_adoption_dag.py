@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+from airflow.hooks.base_hook import BaseHook
 from airflow.hooks.mysql_hook import MySqlHook
 from airflow.utils.dates import days_ago
 import pandas as pd
@@ -32,41 +33,35 @@ def transform_data(**kwargs):
 def load_to_mysql(**kwargs):
     transformed_data = kwargs['ti'].xcom_pull(key='transformed_data', task_ids='transform_data')
     df = pd.DataFrame.from_dict(transformed_data)
-    mysql_hook = MySqlHook(mysql_conn_id='mysql_pet_adoption')
+
+    # Print DataFrame info for debugging
+    print("Transformed DataFrame:")
+    print(df.info())
+    print(df.head())
+
+    #connect to mysql
+    mysql_hook = MySqlHook(mysql_conn_id='mysql')
     connection = mysql_hook.get_conn()
     cursor = connection.cursor()
-    create_table_query = """
-    CREATE TABLE IF NOT EXISTS pet_adoption_data (
-        PetID INT PRIMARY KEY,
-        PetType VARCHAR(255),
-        Breed VARCHAR(255),
-        AgeMonths INT,
-        Color VARCHAR(255),
-        Size VARCHAR(255),
-        WeightKg FLOAT,
-        Vaccinated BOOLEAN,
-        HealthCondition VARCHAR(255),
-        TimeInShelterDays INT,
-        AdoptionFee FLOAT,
-        PreviousOwner BOOLEAN,
-        AdoptionLikelihood FLOAT,
-        AgeCategory VARCHAR(255)
-    )
-    """
-    cursor.execute(create_table_query)
-    for _, row in df.iterrows():
-        insert_query = """
-        INSERT INTO pet_adoption_data (PetID, PetType, Breed, AgeMonths, Color, Size, WeightKg, Vaccinated, HealthCondition, TimeInShelterDays, AdoptionFee, PreviousOwner, AdoptionLikelihood, AgeCategory)
-        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """
-        cursor.execute(insert_query, (
-            row['PetID'], row['PetType'], row['Breed'], row['AgeMonths'], row['Color'], row['Size'], row['WeightKg'],
-            row['Vaccinated'], row['HealthCondition'], row['TimeInShelterDays'], row['AdoptionFee'], row['PreviousOwner'],
-            row['AdoptionLikelihood'], row['AgeCategory']
-        ))
-    connection.commit()
-    cursor.close()
-    connection.close()
+    #insert table into pe_adoption_db
+    try:
+        for _, row in df.iterrows():
+            cursor.execute("""
+                INSERT INTO pet_adopt (PetID, PetType, Breed, AgeMonths, Color, Size, WeightKg, 
+                Vaccinated, HealthCondition, TimeInShelterDays, AdoptionFee, PreviousOwner, AdoptionLikelihood, AgeCategory)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, tuple(row))
+
+        connection.commit()
+        print("Data loaded successfully.")
+
+    except Exception as e:
+        print("Error loading data to MySQL:", e)
+        connection.rollback()
+
+    finally:
+        cursor.close()
+        connection.close()
 
 with DAG(
     'pet_adoption_dag',
