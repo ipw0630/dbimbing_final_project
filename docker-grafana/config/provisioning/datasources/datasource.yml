@@ -1,0 +1,11 @@
+apiVersion: 1
+datasources:
+  - name: MySQL
+    type: mysql
+    access: proxy
+    url: localhost:3306  
+    user: root
+    password: dibimbing
+    database: pet_adoption_db.pet_adopt  # database name
+    jsonData:
+      tlsSkipVerify: true
