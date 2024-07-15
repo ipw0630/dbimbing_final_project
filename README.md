@@ -15,8 +15,10 @@ Performance Tracking: Monitor shelter efficiency metrics like average time pets 
 
 # Transformation & Consideration
 - ![alt text](image-1.png)
-- Trigger file on Airflow successfully 
-- ![alt text](<WhatsApp Image 2024-07-14 at 01.07.43_b0a5a8a7.jpg>)
+  
+  # Trigger file on Airflow successfully 
+- ![WhatsApp Image 2024-07-14 at 01 07 43_b69a2fe6](https://github.com/user-attachments/assets/bc10e79c-c279-48f9-8dc8-02545da58aa0)
+
 
 - Transformation 
 ```
