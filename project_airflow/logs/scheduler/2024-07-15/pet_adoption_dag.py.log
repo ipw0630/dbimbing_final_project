@@ -159,3 +159,45 @@
 [2024-07-15T15:51:19.023+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:51:19.023+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-07-15T15:51:19.045+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:51:19.045+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
 [2024-07-15T15:51:19.066+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 0.610 seconds
+[2024-07-15T15:52:50.809+0000] {processor.py:161} INFO - Started process (PID=24771) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:52:50.811+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:52:50.816+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:52:50.815+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:52:51.834+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:52:51.875+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:52:51.873+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:52:51.926+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:52:51.925+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:52:51.954+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 1.155 seconds
+[2024-07-15T15:52:58.406+0000] {processor.py:161} INFO - Started process (PID=24830) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:52:58.410+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:52:58.415+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:52:58.414+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:00.042+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:00.122+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:00.114+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:53:00.215+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:00.215+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:53:00.319+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 1.939 seconds
+[2024-07-15T15:53:06.269+0000] {processor.py:161} INFO - Started process (PID=24882) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:06.271+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:53:06.273+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:06.273+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:07.078+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:07.117+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:07.116+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:53:07.155+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:07.154+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:53:07.181+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 0.920 seconds
+[2024-07-15T15:53:11.092+0000] {processor.py:161} INFO - Started process (PID=24936) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:11.093+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:53:11.097+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:11.096+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:11.892+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:11.914+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:11.913+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:53:11.941+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:11.941+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:53:11.968+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 0.887 seconds
+[2024-07-15T15:53:17.049+0000] {processor.py:161} INFO - Started process (PID=24988) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:17.051+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:53:17.054+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:17.054+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:17.744+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:17.768+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:17.767+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:53:17.805+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:17.804+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:53:17.830+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 0.791 seconds
+[2024-07-15T15:53:21.614+0000] {processor.py:161} INFO - Started process (PID=25048) to work on /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:21.615+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/pet_adoption_dag.py for tasks to queue
+[2024-07-15T15:53:21.618+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:21.618+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:22.231+0000] {processor.py:840} INFO - DAG(s) 'pet_adoption_dag' retrieved from /opt/airflow/dags/pet_adoption_dag.py
+[2024-07-15T15:53:22.253+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:22.252+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-07-15T15:53:22.277+0000] {logging_mixin.py:188} INFO - [2024-07-15T15:53:22.277+0000] {dag.py:3954} INFO - Setting next_dagrun for pet_adoption_dag to 2024-07-15 00:00:00+00:00, run_after=2024-07-16 00:00:00+00:00
+[2024-07-15T15:53:22.301+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/pet_adoption_dag.py took 0.696 seconds
