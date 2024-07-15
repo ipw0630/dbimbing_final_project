@@ -16,11 +16,11 @@ Performance Tracking: Monitor shelter efficiency metrics like average time pets 
 # Transformation & Consideration
 - ![alt text](image-1.png)
 - Transformation 
-<!-- ` def transform_data(**kwargs):
+` def transform_data(**kwargs):
     raw_data = kwargs['ti'].xcom_pull(key='raw_data', task_ids='extract_csv')
     df = pd.DataFrame.from_dict(raw_data)
     df['AgeCategory'] = df['AgeMonths'].apply(lambda x: 'kitten/puppy' if x < 12 else 'young' if x < 36 else 'adult' if x < 84 else 'senior')
-    kwargs['ti'].xcom_push(key='transformed_data', value=df.to_dict())` -->
+    kwargs['ti'].xcom_push(key='transformed_data', value=df.to_dict())`
 - On mysql 
 ![alt text](<WhatsApp Image 2024-07-14 at 23.42.44_9afabd27.jpg>) | ![alt text](<WhatsApp Image 2024-07-14 at 23.43.19_cda849c5.jpg>)
 
@@ -48,4 +48,8 @@ Future Directions:
 
 # please contact me to enhancement this repo 
 
+<<<<<<< HEAD
 thanks
+=======
+thanks
+>>>>>>> d57c1d2de683ed04eb557c2bc99f4a5e5d2d8a9e
