@@ -49,6 +49,10 @@ Here's the progress that has been made
 ![alt text](image.png)
 ![alt text](<WhatsApp Image 2024-07-10 at 22.35.13_10b9589a.jpg>)
 
+Grafana Monitor successfully updated
+
+![alt text](image-2.png)
+
 # Conclusion & Recommendation
 - Conclusion: By implementing Grafana for monitoring pet adoption data, this project aims to provide shelters, animal welfare organizations, and policymakers with actionable insights to improve adoption processes, optimize resource allocation, and ultimately enhance the welfare of animals in need.
 Future Directions: 

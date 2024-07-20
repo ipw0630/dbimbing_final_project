@@ -1,0 +1,78 @@
+[2024-07-20T16:26:06.283+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-20T16:26:06.323+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: pet_adoption_dag.load_to_mysql scheduled__2024-07-19T00:00:00+00:00 [queued]>
+[2024-07-20T16:26:06.339+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: pet_adoption_dag.load_to_mysql scheduled__2024-07-19T00:00:00+00:00 [queued]>
+[2024-07-20T16:26:06.340+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-20T16:26:06.362+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_to_mysql> on 2024-07-19 00:00:00+00:00
+[2024-07-20T16:26:06.370+0000] {standard_task_runner.py:63} INFO - Started process 66 to run task
+[2024-07-20T16:26:06.375+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'pet_adoption_dag', 'load_to_mysql', 'scheduled__2024-07-19T00:00:00+00:00', '--job-id', '90', '--raw', '--subdir', 'DAGS_FOLDER/pet_adoption_dag.py', '--cfg-path', '/tmp/tmpq0kfyqgd']
+[2024-07-20T16:26:06.377+0000] {standard_task_runner.py:91} INFO - Job 90: Subtask load_to_mysql
+[2024-07-20T16:26:06.445+0000] {task_command.py:426} INFO - Running <TaskInstance: pet_adoption_dag.load_to_mysql scheduled__2024-07-19T00:00:00+00:00 [running]> on host 1a5a38adc989
+[2024-07-20T16:26:06.594+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='pet_adoption_dag' AIRFLOW_CTX_TASK_ID='load_to_mysql' AIRFLOW_CTX_EXECUTION_DATE='2024-07-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-19T00:00:00+00:00'
+[2024-07-20T16:26:06.596+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-20T16:26:06.688+0000] {logging_mixin.py:188} INFO - Transformed DataFrame:
+[2024-07-20T16:26:06.707+0000] {logging_mixin.py:188} INFO - <class 'pandas.core.frame.DataFrame'>
+Index: 2007 entries, 0 to 2006
+Data columns (total 14 columns):
+ #   Column              Non-Null Count  Dtype  
+---  ------              --------------  -----  
+ 0   PetID               2007 non-null   int64  
+ 1   PetType             2007 non-null   object 
+ 2   Breed               2007 non-null   object 
+ 3   AgeMonths           2007 non-null   int64  
+ 4   Color               2007 non-null   object 
+ 5   Size                2007 non-null   object 
+ 6   WeightKg            2007 non-null   float64
+ 7   Vaccinated          2007 non-null   int64  
+ 8   HealthCondition     2007 non-null   int64  
+ 9   TimeInShelterDays   2007 non-null   int64  
+ 10  AdoptionFee         2007 non-null   int64  
+ 11  PreviousOwner       2007 non-null   int64  
+ 12  AdoptionLikelihood  2007 non-null   int64  
+ 13  AgeCategory         2007 non-null   object 
+dtypes: float64(1), int64(8), object(5)
+memory usage: 235.2+ KB
+[2024-07-20T16:26:06.708+0000] {logging_mixin.py:188} INFO - None
+[2024-07-20T16:26:06.734+0000] {logging_mixin.py:188} INFO -    PetID PetType  ... AdoptionLikelihood  AgeCategory
+0    500    Bird  ...                  0       senior
+1    501  Rabbit  ...                  0        adult
+2    502     Dog  ...                  0       senior
+3    503    Bird  ...                  0       senior
+4    504  Rabbit  ...                  0       senior
+
+[5 rows x 14 columns]
+[2024-07-20T16:26:06.747+0000] {base.py:84} INFO - Using connection ID 'mysql' for task execution.
+[2024-07-20T16:26:10.516+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-20T16:26:10.518+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/pet_adoption_dag.py", line 44, in load_to_mysql
+    connection = mysql_hook.get_conn()
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/providers/mysql/hooks/mysql.py", line 196, in get_conn
+    return MySQLdb.connect(**conn_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/MySQLdb/connections.py", line 195, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (2005, "Unknown server host 'mysql' (-2)")
+[2024-07-20T16:26:10.547+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=pet_adoption_dag, task_id=load_to_mysql, run_id=scheduled__2024-07-19T00:00:00+00:00, execution_date=20240719T000000, start_date=20240720T162606, end_date=20240720T162610
+[2024-07-20T16:26:10.570+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 90 for task load_to_mysql ((2005, "Unknown server host 'mysql' (-2)"); 66)
+[2024-07-20T16:26:10.608+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-07-20T16:26:10.640+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-07-20T16:26:10.643+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
