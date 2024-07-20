@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dibimbing Final Project
 
 # Data Source 
@@ -60,8 +59,5 @@ Future Directions:
 
 # please contact me to enhancement this repo 
 
-<<<<<<< HEAD
 thanks
-=======
-thanks
->>>>>>> d57c1d2de683ed04eb557c2bc99f4a5e5d2d8a9e
+
