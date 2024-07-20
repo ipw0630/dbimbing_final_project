@@ -1,1 +1,0 @@
-[2024-07-13T03:43:21.880+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: pet_adoption_dag_1.load_pet_sql scheduled__2024-07-11T00:00:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

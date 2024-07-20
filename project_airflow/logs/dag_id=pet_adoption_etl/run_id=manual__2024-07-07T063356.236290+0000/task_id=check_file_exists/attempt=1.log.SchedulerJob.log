@@ -1,1 +1,0 @@
-[2024-07-07T06:34:18.037+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: pet_adoption_etl.check_file_exists manual__2024-07-07T06:33:56.236290+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
